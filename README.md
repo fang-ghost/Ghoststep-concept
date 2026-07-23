@@ -81,6 +81,10 @@
 最终，**物理电脑**的雏形在 GhostFlow 体系中诞生。
 我们试图回答：**当电子失效时，人类的计算文明将如何延续？**
 
+## Tags
+`hardware-security` `embedded-security` `trng` `true-random-number-generator` `side-channel-defense` `tamper-detection` `physical-unclonable-function` `microcontroller` `stm32` `low-cost-security` `ndrm` `ghostkey`
+
+
 ---
 
 **© 2026 fang-ghost | TSA 2026-07-23**
