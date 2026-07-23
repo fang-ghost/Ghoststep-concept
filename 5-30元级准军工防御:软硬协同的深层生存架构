@@ -71,7 +71,7 @@
 结论：这种软硬协同的架构，使得 GhostKey Mini 在 30 元的成本约束下，实现了对物理拆解、侧信道分析、故障注入及内存取证的多维防御。它不是一件简单的“防刺服”，而是一套具备自我意识的“防弹衣”。
 
 中文术语	English Term	备注/用途
-软硬协同	Hardware-Software Co-design	你这篇总纲的核心主题
+软硬协同	Hardware-Software Co-design	总纲的核心主题
 准军工级	Quasi-Military Grade	比 Industrial Grade 更高级的说法
 深层防御	Defense in Depth	行业标准术语
 安全元件	Secure Element (SE)	必填 Topic
@@ -84,10 +84,10 @@
 总线噪声注入	Bus Noise Injection	抗侧信道分析（DPA）
 侧信道攻击	Side-Channel Attack (SCA)	必填 Topic
 差分功耗分析	Differential Power Analysis (DPA)	高级攻击手法
-非线性动态响应	Nonlinear Dynamic Response	你的 NDRM 算法
+非线性动态响应	Nonlinear Dynamic Response	NDRM 算法
 恒定时间算法	Constant-Time Algorithm	虽本文未详述，但体系相关
-物理否决权	Physical Veto	你的核心发明
-低成本安全	Low-Cost Security	你的市场定位
+物理否决权	Physical Veto	核心发明
+低成本安全	Low-Cost Security	市场定位
 工控安全	ICS Security / OT Security	目标市场
 硬件安全	Hardware Security	大类
 固件硬化	Firmware Hardening	软件层面的防御
