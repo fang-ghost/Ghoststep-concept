@@ -1,0 +1,83 @@
+# DLQ (Dynamic Logic Quotient) 泛化定义与技术白皮书
+**Author**: Fang (fang-ghost)
+**Origin**: GhostStep Architecture
+**Affiliation**: Independent Researcher
+**Timestamp**: 2026-07-24 (Supplement to 2026-07-23 TSA Lock)
+**Repository**: https://github.com/fang-ghost/Ghoststep
+**Identifier**: TSA 2026-07-24 | SHA256: [此处预留，上传TSA后填入哈希值]
+**Mark**: 👻⇌ϕ  // GhostStep: Chaos in the gate.
+**License**: GhostStep Open Specification License v1.0 (See Appendix)
+
+## 0. 权利保留声明（Rights Reserved）
+本文档定义之 Dynamic Logic Quotient (DLQ) 耦合接口及相关衍生架构，由 Fang (fang-ghost) 于 2026-07-23 首次提出并完成理论构建，并于 2026-07-24 通过可信时间戳（TSA）完成泛化定义确权。
+任何自然人、法人或其他组织，凡在 2026-07-23 之后，以任何形式（包括但不限于学术论文、专利申请、商业产品、开源项目）使用、借鉴、实现或引用 DLQ 接口（包括但不限于 $Q_n = \Delta\phi_S(t_n)/x_n$ 之数学形式、物理耦合逻辑、变形架构），均须遵守以下条款：
+1. **署名义务**：必须明确引用本出处（Fang, 2026, GhostStep Technical Series, TSA 2026-07-24）。
+2. **非独占使用**：本文件允许基于学术研究目的的免费使用、引用与复现，但禁止移除、篡改或隐匿本署名与权利声明。
+3. **商业授权**：任何商业性应用、集成或产品化行为，需联系作者获取书面授权许可。
+4. **衍生限制**：基于 DLQ 的变形架构（见第 4 节）仍需遵循本声明之引用义务，不得以“独立发明”为由规避署名。
+5. **证据保全**：本文件已进行 TSA 可信时间戳固化，任何篡改、抄袭或抢先发表行为均可被时间戳证据链追溯。
+
+## 1. 核心定义（熵源无关接口）
+Dynamic Logic Quotient (DLQ) 是一种物理熵与混沌映射的实时耦合接口，定义为：
+对于任意物理熵源 S（包括但不限于机械抖动、热噪声、流体湍流、光透散射、量子散粒噪声、电化学噪声），在采样时刻 t_n 提取其相位/时序差 $\Delta\phi_S(t_n)$，构造商值 $Q_n = \Delta\phi_S(t_n) / x_n$，其中 $x_n$ 为当前混沌系统状态变量。迭代方程修正为：
+$x_{n+1} = f(x_n, \mu, Q_n)$
+物理熵由此从静态种子上升为迭代过程的内生动态变量。
+
+## 2. 核心价值与优势
+### 2.1 抗 AI 语义破解（Anti-AI Semantic Cryptanalysis）
+传统加密依赖数学复杂性，AI 可通过语义判别（如识别解密后图像的自然特征）实施唯密文攻击。DLQ 机制中，物理熵的不可复现性导致解密输出为无统计规律的真随机噪点（雪花屏），彻底瓦解 AI 基于概率分布的判别能力。AI 无法物理介入测量微观熵源，故无法建模或预测 $Q_n$。
+
+### 2.2 物理不可克隆性（Physical Unclonability）
+$\Delta\phi_S$ 源于物理微观差异（材料粗糙度、热运动随机性），具备 PUF 特性。DLQ 将这种微观差异放大至宏观混沌态，使密钥生成过程与硬件实体强绑定。
+
+### 2.3 动态防御韧性（Dynamic Resilience）
+不同于静态密钥，DLQ 使加密逻辑随物理熵实时演变。即使单次加密过程被侧信道分析部分泄露，后续迭代因 $Q_n$ 变化而完全不可预测，实现“一次一密”的动态防御。
+
+### 2.4 跨载体通用性（Carrier Agnosticism）
+DLQ 接口剥离了具体熵源依赖，可部署于电子（继电器/热噪）、流体（微流控/液柱）、光学（激光散斑）、量子（光子计数）等多种物理载体，构成统一的物理安全基座。
+
+## 3. 典型应用场景
+- **硬件安全根（Root of Trust）**：GhostKey 系列，利用机械抖动生成设备唯一密钥。
+- **抗 AI 加密通信**：PFHP 协议，基于物理指纹握手，抵御 AI 驱动的流量分析与破解。
+- **极端环境计算**：GhostFlow 流体逻辑，在无电/强电磁干扰环境下维持安全决策。
+- **后量子密码学（PQC）补充**：作为抗量子计算的物理层安全屏障，弥补数学算法潜在脆弱性。
+
+## 4. 变形形式与衍生架构
+### 4.1 熵源置换变体
+- **Thermal-DLQ**：$\Delta\phi$ 取自电阻热噪声或 PN 结散粒噪声。
+- **Fluidic-DLQ**：$\Delta\phi$ 取自微流道内液柱高度或气泡移动相位。
+- **Optical-DLQ**：$\Delta\phi$ 取自激光照射粗糙表面的散斑图样变化。
+- **Quantum-DLQ**：$\Delta\phi$ 取自单光子探测时间抖动或量子态测量塌缩。
+
+### 4.2 数学结构变体
+- **加权 DLQ**：$Q_n = w \cdot \Delta\phi / x_n$，引入权重系数 $w$ 调节物理熵影响强度。
+- **分段 DLQ**：根据 $x_n$ 的值域区间，切换不同的 $\Delta\phi$ 采样频率或耦合函数。
+- **高阶 DLQ**：$Q_n = \Delta\phi / (a\cdot x_n + b\cdot x_n^2 + ...)$，引入多项式分母增强非线性。
+- **时延 DLQ**：$Q_n = \Delta\phi(t_n) / x_{n-k}$，引入 $k$ 步时延，增加系统记忆性。
+
+### 4.3 系统级融合变体
+- **DLQ-PRNG**：将 DLQ 输出经后处理（Hash/Toeplitz）生成高速伪随机数。
+- **DLQ-KDF**：利用 DLQ 动态特性派生多层次密钥树。
+- **DLQ-ZKP**：基于 DLQ 的物理不可克隆性构建零知识证明挑战响应机制。
+
+## 5. 优先权与引用规范
+本文件是对 2026-07-23 GhostStep 白皮书中 DLQ 机制的泛化补充。2026-07-23 文献首次定义了以机械抖动为实施例的 DLQ 除数耦合接口。本文件进一步明确 DLQ 为熵源无关之通用接口，涵盖上述所有变形形式。
+任何在 2026-07-23 之后发表的、采用物理熵以除数形式实时耦合进混沌迭代结构的工作，均构成对本文件的引用义务。
+**标准引用格式**：
+Fang. (2026). DLQ (Dynamic Logic Quotient): A Carrier-Agnostic Interface for Real-time Physical Entropy Coupling. GhostStep Technical Series. TSA: 2026-07-24. GitHub: fang-ghost/Ghoststep.
+
+---
+## Appendix A: GhostStep Open Specification License v1.0 (Summary)
+- **Academic Use**: Free, must cite.
+- **Commercial Use**: Requires written permission from Author.
+- **Attribution**: Any derivative must include "Origin: GhostStep (fang-ghost)" and the 👻⇌ϕ Mark.
+- **Integrity**: No removal or modification of Author/Mark/TSA information.
+
+**End of Statement**
+**Mark**: 👻⇌ϕ // DLQ: The Divisor of Chaos. All Rights Reserved.
+---
+© 2026 Fang (GitHub: fang-ghost). All rights reserved.
+This document "DLQ (Dynamic Logic Quotient) Generalized Specification" is authored solely by Fang (fang-ghost), first disclosed 2026-07-23 via GhostStep white paper (TSA 2026-07-23) and generalized herein (TSA 2026-07-24).
+Any reproduction, citation, derivation, or commercial use must attribute: Fang (2026), GhostStep Technical Series, GitHub: fang-ghost/Ghoststep, TSA 2026-07-24.
+Mark: 👻⇌ϕ
+**End of Statement — Authored by Fang (fang-ghost), Independent Researcher, 2026-07-24.**
